@@ -1,5 +1,14 @@
 # 🚀 Release Notes
 
+## [v1.31] - 2026-04-28
+### ✨ Added
+유선 DMX 수신 방식을 W-DMX와 동일한 프레임 누적/Break 동기화 구조로 개선
+- USART2 DMX 모드는 250 kbps, 2 Stop-bits 설정에서만 동작하도록 COMM == DMX 조건 강화
+- COMM이 DMX가 아닐 경우 USART2를 일반 RS485 설정(9600 bps, 1 Stop-bit)으로 복귀
+- 유선 DMX는 슬롯 간 IDLE 오검출로 버퍼가 초기화되지 않도록 FE(Break) 기준으로 프레임 처리
+- DMX 수신 데이터는 다음 Break 전까지 RS485.Rxd_buf[]에 누적 후 이전 프레임을 처리
+- DMX/W-DMX 모두 Start Code 0x00 및 My_ID 채널 기준으로 Dimming/Duty 갱신
+
 ## [v1.30] - 2026-04-27
 ### ✨ Added
  **W-DMX (LumenRadio CRMX Pluggy RX) 수신 지원 추가**
