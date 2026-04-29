@@ -5,7 +5,7 @@
  **W-DMX Receiver 상태 신호 표시 기능 추가**
 - W-DMX 모드에서 PA11(NRST_IO)을 Receiver status 입력 핀으로 전환
 - 0V 지속, 100 ms/100 ms 점멸, 100 ms/900 ms 점멸, 3.3V 지속 패턴 판별
-- Status_Display1 COMM 항목에 W_DMX([X]/[~]/[R]/[D]) 형식으로 상태 표시
+- Status_Display1 COMM 항목에 W_DMX([X]/[~]/[O]/[G]) 형식으로 상태 표시
 - W-DMX 모드에서는 WiFi NRST 제어가 PA11 상태 입력을 건드리지 않도록 보호
 - W-DMX 해제 시 PA11을 WiFi NRST 출력 용도로 복구
 
