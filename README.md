@@ -1,6 +1,19 @@
 # 🚀 Release Notes
 
-## [v1.32] - 2026-04-29
+## [v1.4.0] - 2026-04-30
+### ✨ Added
+ **RS485 부트로더 업로드 지원 추가**
+- APP 동작 중 9600 bps 32바이트 패턴으로 업로드 모드 요청 감지
+- FRAM 업로드 요청 플래그 기록 후 리셋하여 부트로더 진입
+- 부트로더 업로드 통신은 921600 bps로 수행
+ 
+ **RS485 Uploader V0.1 추가**
+  1. HEX 파일 App 펌웨어 업로드 기능 수행
+  2. RS485 통신으로 업로드 모드 진입 및 업로드 취소 기능
+  3. App 동작시 9600bps, 업로드시 921600bps 적용
+
+
+## [v1.3.2] - 2026-04-29
 ### ✨ Added
  **W-DMX Receiver 상태 신호 표시 기능 추가**
 - W-DMX 모드에서 PA11(NRST_IO)을 Receiver status 입력 핀으로 전환
@@ -9,7 +22,7 @@
 - W-DMX 모드에서는 WiFi NRST 제어가 PA11 상태 입력을 건드리지 않도록 보호
 - W-DMX 해제 시 PA11을 WiFi NRST 출력 용도로 복구
 
-## [v1.31] - 2026-04-28
+## [v1.3.1] - 2026-04-28
 ### ✨ Added
  **유선 DMX 수신 방식을 W-DMX와 동일한 프레임 누적/Break 동기화 구조로 개선**
 - USART2 DMX 모드는 250 kbps, 2 Stop-bits 설정에서만 동작하도록 COMM == DMX 조건 강화
@@ -18,7 +31,7 @@
 - DMX 수신 데이터는 다음 Break 전까지 RS485.Rxd_buf[]에 누적 후 이전 프레임을 처리
 - DMX/W-DMX 모두 Start Code 0x00 및 My_ID 채널 기준으로 Dimming/Duty 갱신
 
-## [v1.30] - 2026-04-27
+## [v1.3.0] - 2026-04-27
 ### ✨ Added
  **W-DMX (LumenRadio CRMX Pluggy RX) 수신 지원 추가**
  - USART1 을 DMX512 표준(250 kbps, 2 Stop-bits)으로 재초기화 (USART1_WDMX_Init)
@@ -30,14 +43,14 @@
    (채널 인덱스 = My_ID + 1, 유선 DMX RS485.Rxd_buf 와 동일 방식)
  - 메뉴 시스템에 W-DMX 통신 모드 항목 추가 (OLED Display 연동)
  
-## [v1.20] - 2026-03-17
+## [v1.2.0] - 2026-03-17
 ### ✨ Added
 - **신규 모델 지원**: `2.0KW_J` (200V / 110V 겸용) 모델 대응 추가
 
-## [v1.11] - 2025-12-05
+## [v1.1.1] - 2025-12-05
 ### ✨ Added
 - **통신 프로토콜**: WIFI Module Protocol 연동 기능 추가
 
-## [v1.00]
+## [v1.0.0]
 ### 🌱 Initial Release
 - 시스템 기본 기능 구현 및 초기 배포
