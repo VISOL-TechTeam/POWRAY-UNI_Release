@@ -1,8 +1,17 @@
 # 🚀 Release Notes
 
+## [v1.32] - 2026-04-29
+### ✨ Added
+ **W-DMX Receiver 상태 신호 표시 기능 추가**
+- W-DMX 모드에서 PA11(NRST_IO)을 Receiver status 입력 핀으로 전환
+- 0V 지속, 100 ms/100 ms 점멸, 100 ms/900 ms 점멸, 3.3V 지속 패턴 판별
+- Status_Display1 COMM 항목에 W_DMX([X]/[~]/[R]/[D]) 형식으로 상태 표시
+- W-DMX 모드에서는 WiFi NRST 제어가 PA11 상태 입력을 건드리지 않도록 보호
+- W-DMX 해제 시 PA11을 WiFi NRST 출력 용도로 복구
+
 ## [v1.31] - 2026-04-28
 ### ✨ Added
-유선 DMX 수신 방식을 W-DMX와 동일한 프레임 누적/Break 동기화 구조로 개선
+ **유선 DMX 수신 방식을 W-DMX와 동일한 프레임 누적/Break 동기화 구조로 개선**
 - USART2 DMX 모드는 250 kbps, 2 Stop-bits 설정에서만 동작하도록 COMM == DMX 조건 강화
 - COMM이 DMX가 아닐 경우 USART2를 일반 RS485 설정(9600 bps, 1 Stop-bit)으로 복귀
 - 유선 DMX는 슬롯 간 IDLE 오검출로 버퍼가 초기화되지 않도록 FE(Break) 기준으로 프레임 처리
