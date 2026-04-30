@@ -18,8 +18,8 @@
 - CMake 산출물 파일명은 FW_VERSION_FILE_NAME 기준으로 생성
 - 업로더는 파일명 내 V1_4_1, V1.4.1 형식의 펌웨어 버전을 자동 파싱
 - RS485 부트로더 CMD_DISCOVER 수신 불가 문제 해결
-  · 부팅 시 RS485 DE 핀이 TX 고정 → BL_PROTOCOL_InitRxMode()로 RX 모드 강제 초기화
-  · BL_DMX_Poll이 USART1 데이터 없어도 80ms 블로킹 → USART2 CMD_DISCOVER overrun 손실
+  -- 부팅 시 RS485 DE 핀이 TX 고정 → BL_PROTOCOL_InitRxMode()로 RX 모드 강제 초기화
+  -- BL_DMX_Poll이 USART1 데이터 없어도 80ms 블로킹 → USART2 CMD_DISCOVER overrun 손실
     main loop에서 USART1 RXNE/FE/ORE 플래그 없으면 BL_DMX_Poll 호출 생략으로 해결
   · CMD_DISCOVER 응답 delay 연산자 우선순위 버그 수정 (id+1)*15 → (id+1)*15ms
   · WaitForReady 내 CMD_DISCOVER 즉시 처리 추가 (CMD_READY 대기 중 무시되던 문제 해결)
