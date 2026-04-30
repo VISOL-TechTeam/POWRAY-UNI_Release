@@ -7,21 +7,9 @@
 
 RS485는 장비 응답을 확인하는 1:1 또는 순차 다중 업로드 방식이다. W-DMX는 장비 TX 응답이 없는 RX-only 환경이므로 DMX512 프레임을 반복 송신하는 1:N 방식으로 동작한다.
 
-## 실행 파일 생성
-
-빌드 배치파일:
-
-```text
-Bootloader\Tools\build_rs485_uploader.bat
-```
-
-배치파일을 실행하면 실행한 경로에 아래 파일이 생성된다.
-
 ```text
 POWRAY-UNI_Uploader_V1.0.exe
 ```
-
-빌드 완료 후 `build`, `dist`, `.spec`, `__pycache__`는 배치파일에서 삭제한다.
 
 ## 통신 속도
 
