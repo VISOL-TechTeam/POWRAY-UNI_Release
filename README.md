@@ -1,5 +1,33 @@
 # 🚀 Release Notes
 
+## [v1.4.1] - 2026-04-30
+### ✨ Added
+ **W-DMX RX-only 부트로더 업로드 및 백업 펌웨어 복구 지원 추가**
+- Flash sector 4~7을 APP 영역(0x08010000~0x0807FFFF)으로 축소
+- Flash sector 8~11을 백업 펌웨어 영역(0x08080000~0x080FFFFF)으로 분리
+- APP vector table 뒤 고정 메타 영역에 magic/size/crc/version 정보 삽입
+- 업로더가 APP 이미지 마지막 8byte에 동일 magic을 추가하여 업로드 중단/부분 손상 검출
+- 부트로더가 MSP/Reset vector, 앞뒤 magic, 이미지 size, CRC를 모두 확인 후 APP 실행
+- RS485 업로드 성공 시 검증 완료된 APP만 백업 영역으로 복사
+- W-DMX 250000 bps 8N2 RX-only 업로드 경로 추가
+- W-DMX는 TX 응답이 없으므로 START/WRITE/COMPLETE 프레임 반복 송신 방식 적용
+- W-DMX 업로드 실패 시 유효한 백업 펌웨어가 있으면 APP 영역으로 복구 후 리셋
+- W-DMX 업로드 성공/실패/백업복구 결과를 부트로더 OLED 화면에 표시 후 리셋
+- 부트로더 WAITING UPLOAD 화면 우측 하단에 부트로더 버전 표시
+- APP 동작 중 W-DMX 수신 경로에서도 부트로더 업로드 요청 패턴 감지
+- CMake 산출물 파일명은 FW_VERSION_FILE_NAME 기준으로 생성
+- 업로더는 파일명 내 V1_4_1, V1.4.1 형식의 펌웨어 버전을 자동 파싱
+- RS485 부트로더 CMD_DISCOVER 수신 불가 문제 해결
+  · 부팅 시 RS485 DE 핀이 TX 고정 → BL_PROTOCOL_InitRxMode()로 RX 모드 강제 초기화
+  · BL_DMX_Poll이 USART1 데이터 없어도 80ms 블로킹 → USART2 CMD_DISCOVER overrun 손실
+    main loop에서 USART1 RXNE/FE/ORE 플래그 없으면 BL_DMX_Poll 호출 생략으로 해결
+  · CMD_DISCOVER 응답 delay 연산자 우선순위 버그 수정 (id+1)*15 → (id+1)*15ms
+  · WaitForReady 내 CMD_DISCOVER 즉시 처리 추가 (CMD_READY 대기 중 무시되던 문제 해결)
+- 업로더(POWRAY-UNI Uploader) V1.0 업데이트
+  · RS485 echo로 인한 except break 조기 종료 버그 수정 (break → continue)
+  · 수동 ID 추가 기능 추가 (QSpinBox + 수동 추가 버튼)
+  · 포트 오픈 후 1초 안정화 대기 및 버퍼 초기화 로직 추가
+
 ## [v1.4.0] - 2026-04-30
 ### ✨ Added
  **RS485 부트로더 업로드 지원 추가**
