@@ -3,8 +3,8 @@
 ## [v1.4.1] - 2026-04-30
 ### ✨ Added
  **W-DMX RX-only 부트로더 업로드 및 백업 펌웨어 복구 지원 추가**
-- Flash sector 4~7을 APP 영역(0x08010000~0x0807FFFF)으로 축소
-- Flash sector 8~11을 백업 펌웨어 영역(0x08080000~0x080FFFFF)으로 분리
+- Flash sector 4-7을 APP 영역(0x08010000-0x0807FFFF)으로 축소
+- Flash sector 8-11을 백업 펌웨어 영역(0x08080000-0x080FFFFF)으로 분리
 - APP vector table 뒤 고정 메타 영역에 magic/size/crc/version 정보 삽입
 - 업로더가 APP 이미지 마지막 8byte에 동일 magic을 추가하여 업로드 중단/부분 손상 검출
 - 부트로더가 MSP/Reset vector, 앞뒤 magic, 이미지 size, CRC를 모두 확인 후 APP 실행
