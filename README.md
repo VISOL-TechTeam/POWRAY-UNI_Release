@@ -4,7 +4,7 @@
 ### ✨ Added
  **3kW 저가형 출력 수정 및 버튼 동작 버그 수정**
 - 3kW 100% 출력 기존 2050 -> 2450으로 수정(조도값 33k -> 39k)
-- Switch 동작시 Boost 중 동작시 Dim 50%로 동작하지만 Display Timer 유지되는 버그 수정
+- Manual(Switch) 모드에서 Boost 중 Switch 동작시 Dim 50%로 동작하지만 Display Timer 유지되는 버그 수정
  
 ## [v1.4.2] 
 ### ✨ Added
