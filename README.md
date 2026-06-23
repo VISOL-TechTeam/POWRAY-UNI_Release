@@ -1,5 +1,11 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
+## [v1.4.3] 
+### ✨ Added
+ **3kW 저가형 출력 수정 및 버튼 동작 버그 수정**
+- 3kW 100% 출력 기존 2050 -> 2450으로 수정(조도값 33k -> 39k)
+- Switch 동작시 Boost 중 동작시 Dim 50%로 동작하지만 Display Timer 유지되는 버그 수정
+ 
 ## [v1.4.2] 
 ### ✨ Added
  **부트로더 업로드 안정성 및 PC 업로더 UI 개선**
