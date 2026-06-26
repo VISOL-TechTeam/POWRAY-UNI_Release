@@ -1,8 +1,8 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
 ## [v1.4.4]
-*** Modified
- **3KW_C 모델 출력 보정값 업데이트
+### Modified
+ **3KW_C 모델 출력 보정값 업데이트**
 -3KW_C Boost/100% Duty 기준값을 현장 보정값에 맞춰 반영
 
 ## [v1.4.3] 
