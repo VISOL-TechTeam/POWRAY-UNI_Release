@@ -1,5 +1,12 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
+ ## [v1.4.5] 
+ ### Modified
+  **3KW_C SMPS 제어 안정화 및 전류 표시 보정**
+ - LED 0%/출력 전환 시 SMPS ON/OFF 명령 ACK 확인 후 LED PWM/strobe를 전환하도록 개선
+ - 수동 스위치 모드 진입/해제 시 SMPS 상태 잔류로 LED 출력과 SMPS 상태가 어긋나는 문제 보완
+ - SMPS 전류 응답 raw 값을 0.01A 단위와 현장 보정 계수 1.1 기준으로 표시하도록 보정
+ 
 ## [v1.4.4]
 ### Modified
  **3KW_C 모델 출력 보정값 업데이트**
