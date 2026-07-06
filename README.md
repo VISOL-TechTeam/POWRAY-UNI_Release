@@ -1,5 +1,13 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
+ ## [V1.4.6] 
+ ### ✨ Added
+ **모델 변경 시 Duty 보정값 초기화 조건 및 밝기 Duty 계산 방식 개선**
+- 부팅 시 FRAM에서 읽은 Duty_1per/Duty_100per 보정값을 모델 기본값으로 덮어쓰지 않도록 변경
+- 모델 설정 변경 시 플래그를 세우고, 설정 저장 시에만 모델별 기본 Duty_1per/Duty_100per로 리셋
+- 1~99% 밝기는 Duty_1per 배수로 계산하고 Duty_100per를 초과하지 않도록 제한
+- 100% 밝기는 Duty_100per 보정값을 그대로 사용하도록 RS485/DMX/W-DMX/수동 제어 경로 통일
+ 
  ## [V1.4.5] 
  ### Modified
   **3KW_C SMPS 제어 안정화 및 전류 표시 보정**
