@@ -1,5 +1,12 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
+ ## [V1.4.7]
+ ### ✨ Added
+ **WIFI 모듈 OTA 업로드 중 강제 리셋 홀드 및 연결 상태 표기 개선**
+- WIFI 모듈 OTA(펌웨어 업로드) 중 TYPE 0xF2(OTA_STATE)로 busy/idle을 수신하여 강제 NRST/연결 재시도를 홀드하고, keepalive 타임아웃(20s) 시 자동 해제
+- WIFI 상태 표시를 숫자(0~3) 대신 X/D/~/O 글리프로 표기
+  - X=미연결, D=모듈감지, ~=AP연결, O=MQTT완료
+
  ## [V1.4.6] 
  ### ✨ Added
  **모델 변경 시 Duty 보정값 초기화 조건 및 밝기 Duty 계산 방식 개선**
