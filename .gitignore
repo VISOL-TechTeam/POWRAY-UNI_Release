@@ -1,1 +1,20 @@
 /POWRAY-UNI_FW/Tools/POWRAY-UNI_STlink_uploader.zip
+
+# --- AI / agent tooling (do not publish) ---
+.cursor/
+.agents/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursorrules
+.clinerules
+.windsurfrules
+.aider*
+.continue/
+.github/copilot-instructions.md
+.github/instructions/
+.github/agents/
+*.canvas.tsx
+brand_qt_boot.log
+brand_qt_debug.log
+# --- end AI / agent tooling ---
