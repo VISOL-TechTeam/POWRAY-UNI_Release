@@ -1,5 +1,7 @@
 # 🚀 Release Notes - POWRAY-UNI_FW
 
+### WIFI Module Release : https://github.com/VISOL-TechTeam/WIFI_ESP_Module_Release
+
  ## [V1.4.8]
  ### ✨ Added
  **WIFI_MODULE 전용 POWRAY 상태요청(A9) 응답 개선 (DMX/RS485 경로 미변경)**
